@@ -1,0 +1,19 @@
+#container {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(57, 106, 255);
+    width: 400px;
+    height: 500px;
+    border-radius: 30px;
+}
+
+h1 {
+    color: orange;
+}
+
+#overall-cost {
+    font-size: 50px;
+    color: white;
+}
