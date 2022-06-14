@@ -1,13 +1,19 @@
-const userAge = prompt("Insert your age");
+const userAgeQ = parseInt (prompt("Insert your age"));
 
-const userKm = prompt("How far are you willing to travel (in km)");
+const userKmQ = parseInt (prompt("How far are you willing to travel (in km)"));
 
-if (userAge <= 17) {
-  console.log("Hai diritto ad uno sconto del 20%");
+if (userAgeQ <= 17) {
+  console.log("You will be entitled to a discount of 20% on the ticket.");
 
-} else if (userAge > 17 && userAge < 65) {
-  console.log("Non hai diritto ad uno sconto");
-
-} else if (userAge >= 65) {
-  console.log("Hai diritto ad uno sconto del 40%");
+} else if (userAgeQ >= 65) {
+    console.log("You will be entitled to a discount of 40% on the ticket.");
+  
+} else {
+  console.log("You are not entitled to a discount.");
 }
+
+
+const KmCost = (0.21 * 1);
+console.log (KmCost);
+
+
