@@ -2,32 +2,23 @@ const userAgeQ = prompt("Insert your age");
 
 const userKmQ = prompt("How far are you willing to travel (in km)");
 
-const travelKmCost = 0.21 * 100;
-
-const minorPercentage = (userAgeQ * 20) / 100;
-
-const overPercentage = (userAgeQ * 40) / 100;
-
-const overallTravelCostMinor = (travelKmCost + minorPercentage);
-
-const overallTravelCostOver = (travelKmCost + overPercentage);
+const travelKmCost = 0.21 * userKmQ;
 
 if (userAgeQ <= 17) {
+  const minorPercentage = (travelKmCost * 20) / 100;
+  const overallTravelCostMinor = travelKmCost - minorPercentage;
 
-    console.log("Your overall ticket cost for your joruney is ${overallTravelCostOver}")
-
+  alert(
+    overallTravelCostMinor.toFixed(2));
 
 } else if (userAgeQ >= 65) {
+  const overPercentage = (travelKmCost * 40) / 100;
+  const overallTravelCostOver = travelKmCost - overPercentage;
 
-    console.log("Your overall ticket cost for your joruney is ${overallTravelCostOver}")
+  alert(
+    overallTravelCostOver.toFixed(2));
 
 } else {
-    console.log("You are not entitled to a discount.");
+  alert(
+    travelKmCost.toFixed(2));
 }
-// to fixed per cifre decimali
-
-
-
-
-
-
