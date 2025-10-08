@@ -1,26 +1,31 @@
-const userAgeQ = prompt("Insert your age");
+const userAgeQ = parseInt(prompt("Inserisdi la tua età"));
+const userKmQ = parseFloat(prompt("Quanti km intendi percorrere?"));
 
-const userKmQ = prompt("How far are you willing to travel (in km)");
-
-// Defined Km Cost 
-
+// Costo base
 const travelKmCost = 0.21 * userKmQ;
+let discount = 0;
 
-// Discount conditions 
+// Seleziono il paragrafo
+const overAllPrice = document.getElementById('overall_cost');
+const selectedText = document.getElementById('selected_text')
 
+// Calcolo sconto
 if (userAgeQ <= 17) {
-  const minorPercentage = (travelKmCost * 20) / 100;
-  const overallTravelCostMinor = travelKmCost - minorPercentage;
+    discount = travelKmCost * 0.2;
 
-  alert(overallTravelCostMinor.toFixed(2));
+    selectedText.innerText = 'Sei minorenne ed hai diritto ad uno sconto del 20 %';
 
 } else if (userAgeQ >= 65) {
-  const overPercentage = (travelKmCost * 40) / 100;
-  const overallTravelCostOver = travelKmCost - overPercentage;
+    discount = travelKmCost * 0.4;
 
-  alert(overallTravelCostOver.toFixed(2));
-  
+    selectedText.innerText = 'Sei UN SENIOR hai diritto ad uno sconto del 40 %';
 } else {
-
-  alert(travelKmCost.toFixed(2));
+    discount = 0;
+    selectedText.innerText = 'Biglietto normale';
 }
+
+// Calcolo prezzo finale DOPO aver aggiornato discount
+const overAllTravelCost = travelKmCost - discount;
+
+// Scrivo il prezzo nella pagina
+overAllPrice.innerText = `Il tuo costo finale €${overAllTravelCost.toFixed(2)}`;
